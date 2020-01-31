@@ -4,58 +4,184 @@
 	<title>Fundamrentos 1</title>
 	<script type="text/javascript">
 		//Ejercicio 1
+	Escribe una función que devuelve un array con todos los número del 1 al 255.
+	function Array(){
+		z=[ ];
+		for (var i=1, i<256; i++){
+			z.push (i);
+		}
+		return z;
+	}
+	console.log (Array ());
 
 		//Ejercicio 2
-		
+	Escribe una función que entregue la suma de todos los número pares del 1 al 1000.
+	function pares(){
+	  var sum=0;
+	  for (i=2; i<=1000; i+=2){
+	    sum= sum+i;
+	  }
+	  return sum;
+	}
+	console.log (pares());
+
+		//Ejercicio 2 Modulo
+	function modpares(){
+	  var sum=0;
+	  for(i=0; i<=1000; i++){
+	    if(i%2===0){
+	      sum=sum+i;
+	    }
+	  }
+	  return sum;
+	}
+	console.log (modpares ());
+
 		//Ejercicio 3
-		
+	Escribe una función que devuelva la suma de todos los números impares entre 1 y 5000
+		function impares(){
+		  var sum=0;
+		  for (i=1; i<=5000; i+=2){
+		    sum= sum+i;
+		  }
+		  return sum;
+		}
+		console.log (impares());
+
 		//Ejercicio 4
-		
+	Escribe una función que devuelva la suma de todos los valores dentro de un array.
+		function sumarray(x){
+			sum= 0;
+			for (i=0; i<x.length; i++){
+				sum=sum+x[i];
+			}
+			return sum;
+		}
+		a=[2,4,6,8];
+		console.log (sumarray(a));
+
 		//Ejercicio 5
-		
+	Dado un array con múltiples valores, escribe una función que devuelva el número mayor.
+		function maxarray(x){
+		     var max=[0];
+		     for(i=0; i<x.length; i++){
+		       if (max<x[i]){
+		       max=x[i];
+		       }
+		     }
+		     return max;
+		   }
+		   a=[5,-7,2,8,-6];
+    	console.log (maxarray (a));
+
 		//Ejercicio 6
-		
+	Dado un array con múltiples valores, escribe una función que devuelva el promedio de los valores.
+		function avg(x){
+			sum=0;
+			for (var i=0; i<x.length; i++){
+				sum=sum+x[i];
+			}
+			return sum/x.length;
+		}
+		a=[3,4,6];
+		console.log (avg (a));
+
 		//Ejercicio 7
+	Escribe una funcion que devuelva un array de todos los números impares entre 1 y 50.
+		function arrayimpares (){
+			z=[ ];
+			for (i=1; i<=50, i+=2){
+				z.push (i);
+			}
+			return z
+		}
+		console.log (arrayimpares ());
 	
+		//Ejercicio 8
+	Dado un valor Y, escribe una función que toma un array y devuelve los valores mayores que Y.
+	function mayorY (x){
+		y=3;
+        z=[ ];
+		for (i=0; i<x.length; i++){
+			if (x[i]>y){
+             z.push (x[i]);
+			}   
+		}
+  		return z;
+		}
+		a=[1,3,5,7];
+		console.log (mayorY (a).length);
+
 		//Ejercicio 9
-	
+	Dado un array con múltiples valores, escribe una función que reemplace cada valor por el cuadrado del mismo valor.
+			function cuadrado(x){
+	   			for (var i=0; i< x.length; i++){
+	   				x[i]=x[i]* x[i]
+	   			}
+			   return x;
+			}
+			y = cuadrado([1,5,10,-2]);
+			console.log(y); 
+
 		//Ejercicio 10
+		Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0.
+			function replace(x){
+				for (i=0; i<x.length; i++){
+					if (x[i]<0){
+						x[i]=0;
+					}
+				}
+				return x;
+			}
+			a=[1,5,10,-2];
+			console.log (replace(a));
 
 		//Ejercicio 11
-		
+			function varios (x){
+				var max=x[0];
+				var min=x[0];
+				var prom=0;
+				for (var i=0; i<x.length; i++){
+					if(x[i]>max){
+						max=x[i];
+					}
+					if(x[i]<min){
+						min=x[i];
+					}
+					prom=prom+x[i];
+				}
+				prom=prom/x.length;
+				var res=[max,min,prom];
+				return res
+		}
+		x=varios([1,5,10,-2]);
+		console.log(x);
 		//Ejercicio 12
-		
+	Escribe una función que intercambie el primer y el último valor de cualquier array.
+		function change(x){
+			var temp=x[0];
+			x[0]=x[x.length-1];
+			x[x.length-1]=temp;
+			return x;
+		}
+		a=[1,5,10,-2];
+		console.log (change (a));
 		//Ejercicio 13
-		
+	Escribe una función que tome un array de números y reemplace cualquier valor negativo por el string ‘Dojo’.
+			function replaceneg(x){
+				for (i=0; i<x.length; i++){
+					if (x[i]<0){
+						x[i]="Dojo";
+					}
+				}
+				return x;
+			}
+			a=[-1,-3,2];
+			console.log (replaceneg(a));
 
 		</script>
 	</head>
 	<body>
-		<!-- Ejercicio 1-->
-		
-		<!-- Ejercicio 2-->
-		
-		<!-- Ejercicio 3-->
-		
-		<!-- Ejercicio 4-->
-		
-		<!-- Ejercicio 5-->
-		
-		<!-- Ejercicio 6-->
-		
-		<!-- Ejercicio 7-->
-		
-		<!-- Ejercicio 8-->
-		
-		<!-- Ejercicio 9-->
-		
-		<!-- Ejercicio 10-->
-		
-		<!-- Ejercicio 11-->
-		
-		<!-- Ejercicio 12-->
-		
-		<!-- Ejercicio 13-->
-			
+	
 	</body>
 </html>
