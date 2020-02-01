@@ -195,5 +195,22 @@
 		Pred: 15		Real: 15
 			  15			  15
 			  10
+		
+		
+		var contimpar=0;
+var contpar=0;
+function letrero (x){
+		for (var i=0; i<x.length; i++){
+			if (x[i]%2!==0){
+			contimpar=contimpar+1;
+            contpar=0;
+           }
+          if (contimpar==3){
+          console.log("holi");
+          contimpar=0;
+          }
+		}
+}
+	a=letrero([1,2,3,4,5,6,7,8,9,10,11]);
 	</body>
 </html>
