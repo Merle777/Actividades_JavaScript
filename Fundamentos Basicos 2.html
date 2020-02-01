@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fundamentos 2</title>
+	<script type="text/javascript">
+		//Ejercicio 1
+// Dado un array, escribe una función que cambie todos los números positivos en él, por el string “big”.
+	function replace (x){
+		for (var i=0; i<x.length; i++){
+			if (x[i]>0){
+              x[i]="big";
+			}
+      	}
+      	return x;
+		}
+    	a=[-1,3,5,-5]
+		console.log (replace (a));
+
+		//Ejercicio 2
+// Crea una función que tome un array de números. La función debería imprimir (print) el valor menor del array, y devolver (return) el mayor.
+	function array (x){
+		var max= x[0];
+		var min= x[0];
+		for(i=0; i<x.length; i++){
+			if (min>x[i]){
+				min=x[i];
+			}
+            if (max<x[i]){
+                max=x[i];
+            }
+		}
+        console.log (min);
+        return max;
+	}
+  	a=[-1, 4,5,-3,10];
+  	array (a);
+
+		//Ejercicio 3
+// Crea una función para un array de números. La función debería imprimir (print) el penúltimo valor y devolver (return) el primer valor impar.
+	function array (x){
+	console.log (x[x.length-2]);
+		for (i=0; i<x.length; i++){
+            if (x[i]%2!==0){
+              return (x[i]);
+            }
+		}
+	}
+	x=[0,2,3,4,5,6];
+    array (x);
+
+		//Ejercicio 4
+// Dado un array (similar a decir ‘tomado un array’), crea una función que devuelva un nuevo array donde cada valor se duplique.
+	function duplica (x){
+		z=[];
+		for (var i=0; i<x.length; i++){
+			z.push (x[i]*2);
+        }
+      return z;
+	}
+	a=[1,2,3]
+    console.log (duplica (a));
+
+		//Ejercicio 5
+// Dado un array de números, crea una función para reemplazar el último valor con el número de valores positivos encontrados en el array.
+	function replace (x){
+		cont=0
+		for (var i=0; i<x.length; i++){
+			if (x[i]>0){
+				cont=cont+1;
+			}
+		}
+		x[x.length-1]=cont;
+		return x;
+	}
+	a=[-1,1,1,1];
+	console.log(replace (a));
+
+		//Ejercicio 6
+// Crea una función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”.
+	function letrero (x){
+	var contimpar=0;
+	var contpar=0;
+		for (var i=0; i<x.length; i++){
+			if (x[i]%2!==0){
+			contimpar=contimpar+1;
+            contpar=0;
+          		if (contimpar==3){
+          		console.log("¡Qué imparcial!");
+          		contimpar=0;
+          		}
+              }
+          	else {
+          		contpar=contpar+1;
+          		contimpar=0;
+              	if (contpar==3){
+              		console.log("¡Es para bien!");
+              		contpar=0;
+              	}
+          	} 
+		}
+	}
+	a=[2,4,6,8,1,3,5,7];
+	letrero(a);
+
+		//Ejercicio 7
+// Dado un array de números arr, agrega 1 a cualquier otro elemento, específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, console.log cada valor del array y devuelve arr. 
+	function addimpar (arr){
+		for (var i=0; i<arr.length; i++){
+			if (i%2!==0){
+				arr[i]=arr[i]+1;
+			}
+			console.log (arr[i]);
+		}
+		return arr;
+	}
+	a=[1,2,3,4,5,6,7];
+	console.log (addimpar (a));
+
+		//Ejercicio 8
+// Pasado un array que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante?
+	function replacenum (x){
+		for (i=x.length-1; i>0; i--){
+			x[i]=x[i-1].length;
+		}
+		return x;
+	}
+	a=["programar","dojo", "genial"];
+	console.log (replacenum (a));
+
+		//Ejercicio 9
+// Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array. 
+	function addseven (x){
+		var z=[ ];
+		for (i=0; i<x.length; i++){
+			z.push (x[i]+7);
+		}
+		return z;
+	}
+	a=[1,2,3];
+	console.log (addseven (a));
+
+		//Ejercicio 10
+// Dado un array, escribe una función que invierte sus valores en el lugar.
+	// function invertir (x){
+	// 	x.reverse( ),
+	// 	return x;
+	// }
+	// a=[1,2,3];
+	// console.log (invertir (a));
+	function invertir (x){
+		var temp;
+		for (var i=0; i<((x.length)/2); i++){
+			temp=x[i];
+			x[i]=x[x.length-(i+1)];
+			x[x.length-(i+1)]=temp;
+		}
+		return x;
+	}
+	a=[3,1,6,4,2];
+	console.log (invertir (a));
+
+		//Ejercicio 11
+// Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5].
+	function changeneg (x){
+		var z=[ ];
+		for (i=0; i<x.length; i++){
+			z.push (x[i]*-1);
+		}
+		return z;
+	}
+	a=[1,2,3];
+	console.log (changeneg (a));
+
+		//Ejercicio 12
+// Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. 
+	function hambre (x){
+		var cont=0;
+		for (i=0; i<x.length; i++){
+			if (x[i]== "comida"){
+				console.log ("yummy");
+				cont=cont+1;
+			}
+		}
+		if (cont==0) {
+			console.log ("tengo hambre");
+		}
+	}
+	a=["comida","mono","comida", "mono"];
+	hambre(a);
+    b=["mono","mono","mono","mono"];
+    hambre (b);
+
+		//Ejercicio 13
+// Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. 	
+		function intercambia (x){
+		var temp;
+		for (var i=0; i<((x.length)/2); i++){
+			temp=x[i];
+			x[i]=x[x.length-(i+1)];
+			x[x.length-(i+1)]=temp;
+		}
+	}
+
+
+		//Ejercicio 14
+// Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].
+	// function multiplica (x){
+	// 	var num=3;
+	// 	for (var i=0; i<x.length; i++){
+	// 		x[i]=x[i]*num;
+	// 	}
+	// }
+	// a=[1,2,3];
+	// console.log(multiplica (a));
+
+	function multiplica (x,y){
+		for (i=0; x<x.length; i++){
+			x[i]=x[i]*y;
+		}
+		return x;
+	}
+	a=[1,2,3];
+	num=3;
+	console.log (multiplica (x,y));
+
+		</script>
+	}
+	</head>
+	<body>
+	
+	</body>
+</html>
